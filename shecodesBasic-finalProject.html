@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>beautiful london</title>
+    <style>
+      .main {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 15px 60px;
+        background: linear-gradient(
+          65.5deg,
+          rgb(23, 205, 205) -15.1%,
+          rgb(23, 25, 95) 71.5%
+        );
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        border: solid 2px white;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: Georgia;
+      }
+      h2 {
+        color: white;
+        text-align: center;
+        font-family: Georgia;
+      }
+      p {
+        color: white;
+        text-align: center;
+        line-height: 23px;
+      }
+      a {
+        text-decoration: none;
+        color: gold;
+        font-weight: bold;
+      }
+      .wikiLink:hover {
+        text-decoration: underline;
+      }
+      .emoji {
+        color: white;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        color: white;
+        font-size: 18px;
+        padding: 15px 20px;
+        border: none;
+        font-family: Georgia;
+        border-radius: 6px;
+        box-shadow: 5px 5px 10px rgb(48, 45, 45);
+        transition: all 100mhs ease-in-out;
+        background: linear-gradient(
+          109.6deg,
+          rgb(44, 83, 131) 18.9%,
+          rgb(95, 175, 201) 91.1%
+        );
+        color: white;
+      }
+      button:hover {
+        cursor: pointer;
+        background: linear-gradient(
+          68.1deg,
+          rgb(248, 205, 205) -0.3%,
+          rgb(149, 170, 211) 100.7%
+        );
+        color: black;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>London City</h1>
+      <h2>
+        capital and largest city of England and the <em>United Kingdom</em>
+      </h2>
+      <hr />
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/026/730/original/HetqV33.jpg?1644263403"
+        alt="london city at night"
+      />
+      <hr />
+      <p>
+        It stands on the River Thames in south-east England at the head of a
+        50-mile (80 km) estuary down to the North Sea, and has been a major
+        settlement for two millennia. The City of <strong>"London"</strong>, its
+        ancient core and financial centre, was founded by the Romans as
+        Londinium and retains boundaries close to its medieval ones.<br />
+        Since the 19th century,<strong>"London"</strong> has also referred to
+        the metropolis around this core, historically split between the counties
+        of Middlesex, Essex, Surrey, Kent, and Hertfordshire,which largely
+        comprises Greater <strong>"London"</strong>, governed by the Greater
+        <strong>"London"</strong> Authority. The City of Westminster, to the
+        west of the City of <strong>"London"</strong>, has for centuries held
+        the national government and parliament.
+      </p>
+      <span class="emoji">👉</span>
+      <a
+        href="https://en.wikipedia.org/wiki/London"
+        target="_blank"
+        class="wikiLink"
+      >
+        Read on Wikipedia</a
+      >
+      <button class="btn">buy ticket !</button>
+    </div>
+    <script>
+      function buyTicket() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+        let age = prompt("how old are you?");
+
+        if (age < 18) {
+          alert("sorry, " + name + "! you cannot buy tickets of our tour! 😔");
+        } else {
+          alert(
+            "Thank you, " +
+              name +
+              "! We'll send the available flights of our tour to your email ! ✈︎"
+          );
+        }
+      }
+
+      let buy = document.querySelector(".btn");
+      buy.addEventListener("click", buyTicket);
+
+      function changeEmoji() {
+        let myEmoji = document.querySelector(".emoji");
+        myEmoji.innerHTML = "👍";
+      }
+      function undoEmoji() {
+        let myEmoji = document.querySelector(".emoji");
+        myEmoji.innerHTML = "👉";
+      }
+
+      let wikiLink = document.querySelector(".wikiLink");
+
+      wikiLink.addEventListener("mouseover", changeEmoji);
+      wikiLink.addEventListener("mouseout", undoEmoji);
+    </script>
+  </body>
+</html>
